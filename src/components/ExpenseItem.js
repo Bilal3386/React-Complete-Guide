@@ -1,19 +1,17 @@
-import { useState } from "react";
+import "./ExpenseItem.css";
 
-function ExpenseItem() {
-  const [number, setNumber] = useState(0);
-
-  const increase = () => {
-    setNumber(number + 1)
-  }
+function ExpenseItem(props) {
+  const expenseDate = new Date(2022, 2, 28);
+  const expenseTitle = "Car Insurance";
+  const expenseAmount = 283.23;
+  const locationOfExpenditure = "in a mall";
   return (
-    <div>
-      <div>Date</div>
-      <div>
-        <h2>Title</h2>
-        <div>Amount</div>
-        <button onClick={increase}>Add</button>
-        <h1>{number}</h1>
+    <div className="expense-item">
+      <div>{props.date.toISOString()}</div>
+      <div className="expense-item__description">
+        <h2>{props.title}</h2>
+        <div>{props.locationOfExpenditure}</div>
+        <div className="expense-item__price">${props.amount}</div>
       </div>
     </div>
   );
