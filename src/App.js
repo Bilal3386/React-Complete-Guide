@@ -1,5 +1,5 @@
 import Expenses from "./components/Expenses/Expenses";
-import ExpenseForm from "./components/Form/ExpenseForm";
+import NewExpense from "./components/newExpanse/NewExpense";
 
 const App = () => {
   const expenses = [
@@ -35,7 +35,7 @@ const App = () => {
 
   return (
     <div>
-    <ExpenseForm></ExpenseForm>
+    <NewExpense/>
       <Expenses item = {expenses}/>
     </div>
   );
