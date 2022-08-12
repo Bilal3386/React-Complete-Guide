@@ -1,7 +1,8 @@
-import Expenses from "./components/Expenses/Expenses";
+import Expenses, {useState} from "./components/Expenses/Expenses";
 import NewExpense from "./components/newExpanse/NewExpense";
 
 const App = () => {
+  
   const expenses = [
     {
       id: "e1",
@@ -32,10 +33,14 @@ const App = () => {
       locationOfExpenditure: "in a shopping",
     },
   ];
-
+ 
+  const addExpenseHandler = (expense) =>
+  {
+    expenses.push({expense});
+  }
   return (
     <div>
-    <NewExpense/>
+    <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses item = {expenses}/>
     </div>
   );
