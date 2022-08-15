@@ -75,13 +75,14 @@ function ExpenseForm(props) {
             onChange={dateHandler}
             type="date"
             name="date"
-            min="2022-06-19"
+            min="2019-01-19"
             max="2022-12-31"
             value={enteredDate}
           />
         </div>
       </div>
       <div className="new-expense__actions">
+         <button onClick={props.onCancel}>Cancel</button>
         <button>Add Expense</button>
       </div>
     </form>
